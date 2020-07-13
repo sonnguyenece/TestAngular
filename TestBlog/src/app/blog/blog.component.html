@@ -1,0 +1,12 @@
+<div class="container">
+  <h3>Blog List</h3>
+  <hr>
+  <div *ngFor="let blog of blogList;index as i">
+    <a routerLink="{{blog.id}}" ><p>{{blog.id}}</p>
+      <p>{{blog.title|uppercase}}</p>
+      <p>{{blog.body}}</p></a>
+    <button class="btn btn-danger" (click)="checkConfirm(i)">Delete</button>
+    <a routerLink="edit/{{blog.id}}" class="btn btn-warning">Edit</a>
+    <hr>
+  </div>
+</div>
