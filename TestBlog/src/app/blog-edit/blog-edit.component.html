@@ -1,9 +1,22 @@
 <div class="container">
-  <h3>Blog Editor</h3>
-  <hr>
-  <input type="number" value="{{blog.id}}"/>
-  <input type="number" value="{{blog.userId}}"/>
-  <input type="text" value="{{blog.title}}"/>
-  <input type="text" value="{{blog.body}}"/>
-
+  <form [formGroup]="blogForm" (ngSubmit)="onSubmit()">
+    <h3>Blog Editor</h3>
+    <hr>
+<!--    BlogId:-->
+<!--    <br><input type="number"  formControlName="id"/ >-->
+    <br>
+    UserId:
+    <br><input type="number"  formControlName="userId"/>
+    <br>
+    Title:
+    <br>
+    <input type="text"   formControlName="title"/>
+    <br>
+    Body:
+    <br>
+    <textarea rows="5" cols="80" formControlName="body"></textarea>
+    <br>
+    <button class="btn btn-warning">SAVE</button>
+  </form>
+  <div *ngIf="message">{{message}}</div>
 </div>
